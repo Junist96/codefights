@@ -1,14 +1,6 @@
 def alternatingSums(a):
-    lst = []
-    lst2 = []
-    result = []
-    for i in range(len(a)):
-        if i == 0 or i % 2 == 0:
-            lst.append(a[i])
-        else:
-            lst2.append(a[i])
 
-    result.append(sum(lst))
-    result.append(sum(lst2))
+    lst = [a[i] for i in range(len(a)) if i == 0 or i % 2 == 0]
+    lst2 = [a[i] for i in range(len(a)) if a[i] not in lst]
 
-    return result
+    return [sum(lst), sum(lst2)]
