@@ -11,4 +11,3 @@ def almostIncreasingSequence(sequence):
                     count_decreasing_sq += 1
 
     return count_decreasing_sq <= 1
-
