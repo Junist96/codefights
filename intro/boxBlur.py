@@ -1,16 +1,16 @@
 def boxBlur(image):
 
-    height = len(image)
-    weight = len(image[0])
+    row = len(image)
+    col = len(image[0])
 
-    idx = 0
-    lst = [sum([i[idx], i[idx+1], i[idx+2]]) for i in image]
+    result = []
 
+    # 두 번째 행부터 마지막 전 행까지 탐색
+    for i in range(1, row - 1):
+        init = [] #
+        # 두 번째 열부터 마지막 전 행까지 탐색
+        for j in range(1, col - 1):
+            init.append(sum([image[i+k][j+l] for k in [-1, 0, 1] for l in [-1, 0, 1]]) // 9)
+        result.append(init)
 
-image = [[7, 4, 0, 1],
-         [5, 6, 2, 2],
-         [6, 10, 7, 8],
-         [1, 4, 2, 0]]
-
-∂
-boxBlur(image)
+    return result
